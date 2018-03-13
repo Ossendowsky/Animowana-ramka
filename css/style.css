@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main__section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 310px;
+    width: 610px;
+}
+
+.inner__img::before {
+    content: '';
+    height: 160px;
+    width: 610px;
+    border: 5px solid #000;
+    border-bottom: 0;
+    position: absolute;
+    left: -10px;
+    top: -60%;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.inner__img::after {
+    content: '';
+    height: 160px;
+    width: 610px;
+    border: 5px solid #000;
+    border-top: 0;
+    position: absolute;
+    left: -10px;
+    bottom: -60%;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.inner__img {
+    position: relative;
+    height: 300px;
+    width: 600px;
+    background-image: url(../img/4-jezioro.jpg);
+}
+
+.img__mask {
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 611px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    opacity: 0;
+}
+
+.img__mask h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 100
+}
+
+.section__inner:hover > .inner__img > .img__mask {
+    opacity: 1;
+}
+
+.inner__img:hover::before {
+    opacity: 1;
+    transform: translateY(102%);
+}
+
+.inner__img:hover::after {
+    opacity: 1;
+    transform: translateY(-102%);
+}
